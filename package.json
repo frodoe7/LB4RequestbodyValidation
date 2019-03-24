@@ -1,0 +1,51 @@
+{
+  "name": "ay",
+  "version": "1.0.0",
+  "description": "ay",
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=8.9"
+  },
+  "scripts": {
+    "build": "tsc --outDir dist --target es2017",
+    "build:watch": "tsc --outDir dist --target es2017 --watch",
+    "clean": "rimraf dist",
+    "pretest": "npm run clean && npm run build",
+    "migrate": "node ./dist/migrate",
+    "start": "npm run build && node .",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "author": "",
+  "license": "",
+  "files": [
+    "README.md",
+    "index.js",
+    "index.d.ts",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^1.0.14",
+    "@loopback/context": "^1.6.0",
+    "@loopback/core": "^1.1.7",
+    "@loopback/openapi-v3": "^1.2.3",
+    "@loopback/repository": "^1.1.7",
+    "@loopback/rest": "^1.7.0",
+    "@loopback/rest-explorer": "^1.1.10",
+    "loopback-connector-mongodb": "^4.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2",
+    "@loopback/testlab": "^1.0.7",
+    "@types/node": "^10.11.2",
+    "typescript": "^3.3.1"
+  }
+}
