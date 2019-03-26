@@ -4,6 +4,8 @@ import {
   Filter,
   repository,
   Where,
+  model,
+  property
 } from '@loopback/repository';
 import {
   post,
@@ -16,12 +18,16 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Test} from '../models';
+
 import {TestRepository} from '../repositories';
 
-interface idAndAge {
- id : string,
- age : number
+@model()
+class idAndAge {
+  @property()
+   id : string
+  
+  @property()
+  age : number
 }
 
 export class TestPutController {
